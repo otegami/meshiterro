@@ -63,3 +63,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #use gem about user_signUp
 gem 'devise'
+
+#use this gem about your uploading file to sever
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+
+#user this gem about resizing your file uploded
+gem "refile-mini_magick"
