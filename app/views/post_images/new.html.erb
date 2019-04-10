@@ -16,7 +16,7 @@
                 <div class="error_explanation">
                   <h2><%= @post_image.errors.count %> Erors, please check!!</h2>
                   <ul>
-                    <%= @post_image.errors.full_message.each do |message|%>
+                    <%= @post_image.errors.full_messages.each do |message|%>
                       <li><%= message %></li>
                     <% end %>
                   </ul>

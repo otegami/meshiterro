@@ -67,5 +67,8 @@ gem 'devise'
 #use this gem about your uploading file to sever
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 
-#user this gem about resizing your file uploded
+#use this gem about resizing your file uploded
 gem "refile-mini_magick"
+
+#user this gem about pagenations
+gem 'kaminari', '~> 1.1.1'

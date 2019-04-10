@@ -7,16 +7,29 @@ class PostImagesController < ApplicationController
   def create
     @post_image = PostImage.new(post_image_params)
     @post_image.user_id = current_user.id
-    @post_image.save
-    redirect_to post_images_path
+    if @post_image.save
+      redirect_to post_images_path
+    else
+      render :new
+    end
   end
 
   def index
-    @post_images = PostImage.all
+    #this method show all posts. It makes this page too heavy
+    #@post_images = PostImage.all
+    #So we use kaminari.
+    @post_images = PostImage.page(params[:page]).reverse_order
   end
 
   def show
     @post_image = PostImage.find(params[:id])
+    @post_comment = PostComment.new
+  end
+
+  def destroy
+    @post_image = PostImage.find(params[:id])
+    @post_image.destroy
+    redirect_to post_images_path
   end
 
   private
